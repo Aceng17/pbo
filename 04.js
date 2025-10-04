@@ -33,13 +33,13 @@ mhs1.setNilai(150); // Output: Nilai harus antara 0 dan 100
 const mhs2 = new Mahasiswa("udin", "123456", "80");
 console.log(`Nilai awal: ${mhs2.getNilai()}`); // Output: 80
 mhs2.setNilai(90);
-console.log(`Nilai setelah diubah: ${mhs1.getNilai()}`); // Output: 90
+console.log(`Nilai setelah diubah: ${mhs2.getNilai()}`); // Output: 90
 mhs2.setNilai(150); // Output: Nilai harus antara 0 dan 100
 
 const mhs3 = new Mahasiswa("satura", "56789", "70");
 console.log(`Nilai awal: ${mhs3.getNilai()}`); // Output: 70
 mhs3.setNilai(93);
-console.log(`Nilai setelah diubah: ${mhs1.getNilai()}`); // Output: 93
+console.log(`Nilai setelah diubah: ${mhs3.getNilai()}`); // Output: 93
 mhs3.setNilai(150); // Output: Nilai harus antara 0 dan 100
 
 
