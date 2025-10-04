@@ -6,7 +6,7 @@ class Mahasiswa {
   }
 
   belajar() {
-    console.log(${this.nama} sedang belajar.);
+    console.log(`${this.nama} sedang belajar.);
   }
 }
 
