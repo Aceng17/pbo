@@ -1,0 +1,104 @@
+Pewarisan
+
+// Kelas induk (superclass)
+class Hewan {
+  constructor(nama, jenis) {
+    this.nama = nama;
+    this.jenis = jenis;
+  }
+
+  suara() {
+    return ${this.nama} bersuara...;
+  }
+}
+
+// Kelas turunan (subclass)
+class Kucing extends Hewan {
+  constructor(nama, warna) {
+    super(nama, 'Kucing'); // Panggil constructor superclass
+    this.warna = warna;
+  }
+
+  suara() {
+    return ${this.nama} mengeong...;
+  }
+}
+
+// Kelas turunan lain
+class Anjing extends Hewan {
+  constructor(nama, warna) {
+    super(nama, 'Anjing');
+    this.warna = warna;
+  }
+
+  suara() {
+    return ${this.nama} menggonggong...;
+  }
+}
+
+// Contoh penggunaan
+const kucing1 = new Kucing('Mimi', 'Putih');
+const anjing1 = new Anjing('Doggy', 'Coklat');
+
+console.log(kucing1.suara()); // Output: Mimi mengeong...
+console.log(anjing1.suara()); // Output: Doggy menggonggong...
+
+
+Polimorfisme
+
+// Kelas induk (superclass)
+class Hewan {
+  constructor(nama, jenis) {
+    this.nama = nama;
+    this.jenis = jenis;
+  }
+
+  suara() {
+    return ${this.nama} bersuara...;
+  }
+}
+
+// Kelas turunan 1
+class Kucing extends Hewan {
+  constructor(nama, warna) {
+    super(nama, 'Kucing');
+    this.warna = warna;
+  }
+
+  suara() {
+    return ${this.nama} mengeong: Meong!;
+  }
+}
+
+// Kelas turunan 2
+class Anjing extends Hewan {
+  constructor(nama, warna) {
+    super(nama, 'Anjing');
+    this.warna = warna;
+  }
+
+  suara() {
+    return ${this.nama} menggonggong: Guk guk!;
+  }
+}
+
+// Kelas turunan 3 (Polimorfisme)
+class Burung extends Hewan {
+  constructor(nama) {
+    super(nama, 'Burung');
+  }
+
+  suara() {
+    return ${this.nama} berkicau: Cip cip!;
+  }
+}
+
+// Daftar objek Hewan (polimorfisme)
+const hewanList = [
+  new Kucing("Milo", "Putih"),
+  new Anjing("Buddy", "Hitam"),
+  new Burung("Tweety")
+];
+
+// Menampilkan semua suara hewan
+hewanList.forEach(hewan => console.log(hewan.suara()));
