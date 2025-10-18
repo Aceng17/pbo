@@ -1,5 +1,3 @@
-Pewarisan
-
 // Kelas induk (superclass)
 class Hewan {
   constructor(nama, jenis) {
@@ -12,80 +10,43 @@ class Hewan {
   }
 }
 
-// Kelas turunan (subclass)
+// Kelas turunan Kucing
 class Kucing extends Hewan {
   constructor(nama, warna) {
-    super(nama, 'Kucing'); // Panggil constructor superclass
+    super(nama, "Kucing");
     this.warna = warna;
-  }
-
-  suara() {
-    return ${this.nama} mengeong...;
   }
 }
 
-// Kelas turunan lain
+// Kelas turunan Anjing
 class Anjing extends Hewan {
   constructor(nama, warna) {
-    super(nama, 'Anjing');
+    super(nama, "Anjing");
     this.warna = warna;
   }
 
+  // Overriding method
   suara() {
-    return ${this.nama} menggonggong...;
+    return ${this.nama} menggonggong: Woof woof!;
   }
 }
 
-// Contoh penggunaan
-const kucing1 = new Kucing('Mimi', 'Putih');
-const anjing1 = new Anjing('Doggy', 'Coklat');
-
-console.log(kucing1.suara()); // Output: Mimi mengeong...
-console.log(anjing1.suara()); // Output: Doggy menggonggong...
-
-
-Polimorfisme
-
-// Kelas induk (superclass)
-class Hewan {
-  constructor(nama, jenis) {
-    this.nama = nama;
-    this.jenis = jenis;
-  }
-
-  suara() {
-    return ${this.nama} bersuara...;
-  }
-}
-
-// Kelas turunan 1
-class Kucing extends Hewan {
+// Kelas turunan Serigala
+class Serigala extends Hewan {
   constructor(nama, warna) {
-    super(nama, 'Kucing');
+    super(nama, "Serigala");
     this.warna = warna;
   }
 
   suara() {
-    return ${this.nama} mengeong: Meong!;
+    return super.suara() + " Auuuuu~";
   }
 }
 
-// Kelas turunan 2
-class Anjing extends Hewan {
-  constructor(nama, warna) {
-    super(nama, 'Anjing');
-    this.warna = warna;
-  }
-
-  suara() {
-    return ${this.nama} menggonggong: Guk guk!;
-  }
-}
-
-// Kelas turunan 3 (Polimorfisme)
+// Kelas turunan Burung
 class Burung extends Hewan {
   constructor(nama) {
-    super(nama, 'Burung');
+    super(nama, "Burung");
   }
 
   suara() {
@@ -93,12 +54,23 @@ class Burung extends Hewan {
   }
 }
 
-// Daftar objek Hewan (polimorfisme)
+// Contoh penggunaan
+const milo = new Kucing("Milo", "Putih");
+console.log(milo.nama); // Milo
+console.log(milo.jenis); // Kucing
+console.log(milo.suara()); // Milo bersuara...
+
+const doge = new Anjing("Doge", "Coklat");
+console.log(doge.suara()); // Doge menggonggong: Woof woof!
+
+const alpha = new Serigala("Alpha", "Abu-abu");
+console.log(alpha.suara()); // Alpha bersuara... Auuuuu~
+
+// Polimorfisme dalam array
 const hewanList = [
   new Kucing("Milo", "Putih"),
   new Anjing("Buddy", "Hitam"),
   new Burung("Tweety")
 ];
 
-// Menampilkan semua suara hewan
 hewanList.forEach(hewan => console.log(hewan.suara()));
